@@ -10,7 +10,7 @@ var sortedSquares = function (nums) {
   return ans;
 };
 
-// Two pointer approach
+// Two pointer approach O(n)
 
 var sortedSquares = function (nums) {
   let n = nums.length;
