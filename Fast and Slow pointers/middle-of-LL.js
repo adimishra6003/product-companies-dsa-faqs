@@ -17,3 +17,17 @@ var middleNode = function (head) {
 
   return head;
 };
+
+// Fast and Slow pointer approach (faster and cleaner)
+
+var middleNode = function (head) {
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return slow;
+};
