@@ -25,6 +25,7 @@ var isHappy = function (n) {
 };
 
 // Fast and Slow pointer approach
+// TC => O(logn), SC => O(1)
 
 var calcSquaredSum = (n) => {
   let d = 0,
