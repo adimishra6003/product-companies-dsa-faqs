@@ -23,3 +23,29 @@ var isHappy = function (n) {
 
   return true;
 };
+
+// Fast and Slow pointer approach
+
+var calcSquaredSum = (n) => {
+  let d = 0,
+    sum = 0;
+  while (n) {
+    d = n % 10;
+    sum += d * d;
+    n = Math.floor(n / 10);
+  }
+
+  return sum;
+};
+
+var isHappy = function (n) {
+  let slow = n;
+  let fast = n;
+  while (fast !== 1) {
+    slow = calcSquaredSum(slow);
+    fast = calcSquaredSum(calcSquaredSum(fast));
+    if (fast !== 1 && fast == slow) return false;
+  }
+
+  return true;
+};
