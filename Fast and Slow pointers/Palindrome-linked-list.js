@@ -38,10 +38,10 @@ var isPalindrome = function (head) {
   // reverse from the middle (watch this video if you want to know how to reverse - https://www.youtube.com/watch?v=auoTGovuo9A)
   let prev = null;
   while (slow) {
-    let next = slow.next;
-    slow.next = prev;
-    prev = slow;
-    slow = next;
+    let next = slow.next; // Temporarily store the next node into next so that on reversing the node does not lead to loosing the next node
+    slow.next = prev; // Reverse the node
+    prev = slow; // Move the prev pointer forward
+    slow = next; // Move the slow pointer forward
   }
   // compare the first and second (reversed) half
   let left = head,
