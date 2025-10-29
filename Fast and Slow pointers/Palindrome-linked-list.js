@@ -30,12 +30,12 @@ var isPalindrome = function (head) {
 
   let fast = head,
     slow = head;
-
+  // find the middle
   while (fast && fast.next) {
     slow = slow.next;
     fast = fast.next.next;
   }
-
+  // reverse from the middle (watch this video if you want to know how to reverse - https://www.youtube.com/watch?v=auoTGovuo9A)
   let prev = null;
   while (slow) {
     let next = slow.next;
@@ -43,7 +43,7 @@ var isPalindrome = function (head) {
     prev = slow;
     slow = next;
   }
-
+  // compare the first and second (reversed) half
   let left = head,
     right = prev;
 
