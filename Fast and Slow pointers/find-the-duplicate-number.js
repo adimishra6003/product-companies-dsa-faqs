@@ -1,3 +1,14 @@
+// Naive approach using sorting
+// TC => O(nlogn), SC => O(1)
+
+var findDuplicate = function (nums) {
+  nums.sort((a, b) => a - b);
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] == nums[i - 1]) return nums[i];
+  }
+};
+
 // Naive approach using extra set to check duplicacy
 // TC => O(n), SC => O(n)
 
