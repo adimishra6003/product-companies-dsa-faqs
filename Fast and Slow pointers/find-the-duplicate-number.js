@@ -21,7 +21,8 @@ var findDuplicate = function (nums) {
   }
 };
 
-//
+// Fast and slow pointer approach
+// TC => O(n), SC => O(1)
 
 var findDuplicate = function (nums) {
   let slow = nums[0];
