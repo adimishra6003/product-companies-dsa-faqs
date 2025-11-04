@@ -1,5 +1,5 @@
 // Brute Force approach
-// TC => O(n^2) SC=> O(1)
+// TC => O(n*k) because we add k elements n times. SC=> O(1)
 
 var findMaxAverage = function (nums, k) {
   let sum = 0,
