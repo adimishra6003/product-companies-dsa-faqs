@@ -1,6 +1,8 @@
 // Binary search only works if array is sorted
 // TC => O(logn) we half the array in each step
 
+// Iterative Approach
+
 function binarySearch(nums, target) {
   let left = 0,
     right = nums.length - 1;
@@ -22,3 +24,27 @@ function binarySearch(nums, target) {
 console.log(binarySearch([1, 2, 4, 6, 77, 80], 20)); // -1
 console.log(binarySearch([1, 2, 4, 6, 77, 80], 77)); // 4
 console.log(binarySearch([1, 2, 4, 6, 77, 80], 65)); // -1
+
+// Recursive approach
+
+function binarySearchRecursive(
+  nums,
+  target,
+  left = 0,
+  right = nums.length - 1
+) {
+  if (left > right) return -1; // Empty array
+
+  let mid = Math.floor((left + right) / 2);
+
+  if (nums[mid] == target) return mid;
+  else if (nums[mid] < target) {
+    return binarySearchRecursive(nums, target, mid + 1, right);
+  } else {
+    return binarySearchRecursive(nums, target, left, mid - 1);
+  }
+}
+
+console.log(binarySearchRecursive([1, 2, 4, 6, 77, 80], 20)); // -1
+console.log(binarySearchRecursive([1, 2, 4, 6, 77, 80], 77)); // 4
+console.log(binarySearchRecursive([1, 2, 4, 6, 77, 80], 65)); // -1
