@@ -31,4 +31,14 @@ function fibonacciRecursive(n) {
 console.log(fibonacciRecursive(6));
 
 // Recursive with memoization
-// TC => O(n), SC => O(n)
+// TC => O(n), SC => O(n) due to call stack and memo map
+
+function fibonacciMemoized(n, memo = {}) {
+  if (n in memo) return memo[n];
+  if (n < 2) return n;
+
+  memo[n] = fibonacciMemoized(n - 1, memo) + fibonacciMemoized(n - 2, memo);
+  return memo[n];
+}
+
+console.log(fibonacciMemoized(6));
