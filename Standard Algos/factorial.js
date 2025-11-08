@@ -14,7 +14,7 @@ function factorialIterative(n) {
 console.log(factorialIterative(5));
 
 // Recursive approach
-// TC => O(n), SC=> O(2^n)
+// TC => O(n), SC=> O(n)
 
 function factorialRecursive(n) {
   if (n == 0 || n == 1) return 1;
