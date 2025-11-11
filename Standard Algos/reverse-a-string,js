@@ -1,3 +1,6 @@
+// Iterative approach
+// TC => O(n), SC=> O(n)
+
 function reverseIterative(s) {
   let arr = s.split("");
   let start = 0,
@@ -13,3 +16,14 @@ function reverseIterative(s) {
 }
 
 console.log(reverseIterative("aditya"));
+
+// Recursive Approach
+// TC => O(n), SC => O(n)
+
+function reverseRecursive(s) {
+  if (s.length <= 1) return s;
+
+  return reverseRecursive(s.slice(1)) + s[0];
+}
+
+console.log(reverseRecursive("aditya"));
