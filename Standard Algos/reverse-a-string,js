@@ -1,0 +1,15 @@
+function reverseIterative(s) {
+  let arr = s.split("");
+  let start = 0,
+    end = arr.length - 1;
+
+  while (start < end) {
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    start++;
+    end--;
+  }
+
+  return arr.join("");
+}
+
+console.log(reverseIterative("aditya"));
