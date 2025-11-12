@@ -19,12 +19,12 @@ console.log(palindromeCheckIterative("abcba"));
 // Recursive approach
 // TC => O(n) SC => O(n)
 
-function palindromeCheckRecursive(s, left, right) {
+function palindromeCheckRecursive(s, left = 0, right = s.length - 1) {
   if (left === right) return true;
 
   if (s[left] !== s[right]) return false;
 
-  palindromeCheckRecursive(s, left + 1, right - 1);
+  return palindromeCheckRecursive(s, left + 1, right - 1);
 }
 
-console.log(palindromeCheckRecursive("acba", 0));
+console.log(palindromeCheckRecursive("abcba"));
