@@ -6,7 +6,7 @@ function inorderRecursive(node) {
   if (!node) return;
   inorderRecursive(node.left);
   console.log(node.val);
-  inorderRecursive(node.left);
+  inorderRecursive(node.right);
 }
 
 // Iterative approach (simulating recursion stack using stack data structure )
@@ -27,3 +27,18 @@ function inorderIterative(node) {
     curr = curr.right;
   }
 }
+
+// Testing these using a custom tree
+
+class TreeNode {
+  constructor(val, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+let root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3)));
+
+inorderRecursive(root);
+inorderIterative(root);
