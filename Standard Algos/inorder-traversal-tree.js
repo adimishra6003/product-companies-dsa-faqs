@@ -8,3 +8,22 @@ function inorderRecursive(node) {
   console.log(node.val);
   inorderRecursive(node.left);
 }
+
+// Iterative approach (simulating recursion stack using stack data structure )
+// TC => O(n) Every node is visited only once
+// SC => O(n) in case of a skewed tree
+
+function inorderIterative(node) {
+  let curr = node,
+    stack = [];
+
+  while (curr || stack.length) {
+    while (curr) {
+      stack.push(curr);
+      curr = curr.left;
+    }
+    curr = stack.pop();
+    console.log(curr.val);
+    curr = curr.right;
+  }
+}
